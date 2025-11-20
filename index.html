@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maaf ya, Viraa ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+            overflow: hidden;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 420px;
+            background: #ffffffdd;
+            padding: 30px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            animation: fadeIn 1.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translate(-50%, -40%); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
+        }
+
+        h1 {
+            color: #e63946;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .heart {
+            font-size: 60px;
+            color: #e63946;
+            animation: heartbeat 1.3s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.15); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #e63946;
+            color: #fff;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #c72e3c;
+        }
+
+        /* LOVE RAIN (ANIMASI LOVE JATUH) */
+        .love {
+            position: fixed;
+            top: -10px;
+            font-size: 20px;
+            animation: fall linear infinite;
+            color: #ff4d6d;
+            opacity: 0.8;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(110vh) rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MUSIK -->
+    <audio id="bgmusic" autoplay loop>
+        <!-- kamu bisa ganti link mp3-nya -->
+        <source src="https://www.chosic.com/wp-content/uploads/2021/06/romantic.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <div class="heart">❤️</div>
+        <h1>Maaf ya, Viraa</h1>
+
+        <p>
+            Aku minta maaf banget soal kemarin…  
+            suaramu nggak jelas di aku dan aku malah salah respon.
+        </p>
+
+        <p>
+            Bukan karena aku nggak mau dengerin kamu…  
+            tapi karena aku takut kamu ngerasa diabaikan.
+        </p>
+
+        <p>
+            Kamu itu penting banget buat aku.  
+            LDR Magelang–Agam nggak bikin perasaanku berkurang sedikit pun.
+        </p>
+
+        <p>
+            Maafin aku ya, Viraa. Aku sayang kamu ❤️
+        </p>
+
+        <a href="#" class="btn" onclick="alert('Terima kasih, Viraa ❤️')">Maafkan Aku</a>
+    </div>
+
+    <script>
+        // LOVE RAIN GENERATOR
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("love");
+            heart.innerHTML = "❤️";
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = 3 + Math.random() * 2 + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+</html>
